@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Unit Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-exchange-alt"></i>Uniwersal Birlik Öwrüji</h1>
+            <p class="subtitle">Ölçeg birliklerini üýtgetmek: uzynlyk, temperatura, göwrüm</p>
+        </header>
+
+        <div class="converter-card">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="length">
+                    <i class="fas fa-ruler"></i> Uzynlyk
+                </button>
+                <button class="tab-btn" data-category="temperature">
+                    <i class="fas fa-thermometer-half"></i> Temperatura
+                </button>
+                <button class="tab-btn" data-category="volume">
+                    <i class="fas fa-flask"></i> Göwrüm
+                </button>
+            </div>
+
+            <div class="converter-content">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="from-unit">Nämeden:</label>
+                        <div class="select-wrapper">
+                            <select id="from-unit" class="unit-select">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="value-input">Sany:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="value-input" value="1" step="any" placeholder="Sany giriziň">
+                            <button id="swap-btn" class="swap-btn" title="Birlikleri çalyş">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="to-unit">Nämä:</label>
+                        <div class="select-wrapper">
+                            <select id="to-unit" class="unit-select">
+                                <!-- Nusgalar JavaScript arkaly doldurular -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="error-message" class="error-message"></div>
+
+                <div class="result-section">
+                    <div class="result-box">
+                        <div class="result-label">Netije:</div>
+                        <div id="result" class="result-value">0</div>
+                        <div id="formula" class="formula"></div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="convert-btn" class="btn convert-btn">
+                        <i class="fas fa-sync-alt"></i> Öwürmek
+                    </button>
+                    <button id="reset-btn" class="btn reset-btn">
+                        <i class="fas fa-redo"></i> Arassalamak
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3><i class="fas fa-history"></i> Öwrümleriň taryhy</h3>
+                <div id="history-list" class="history-list">
+                    <!-- Taryh şu ýere goşular -->
+                    <div class="history-empty">Entek öwürme ýok</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Universal Unit Converter (TM) 2025 &copy;  | Türkmen Döwlet Ykdysadyýet we Dolandyryş Instituty</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
